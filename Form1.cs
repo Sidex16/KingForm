@@ -6,7 +6,19 @@ namespace KingForm
         {
             InitializeComponent();
         }
+        private void addToFirstColon_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void addToSecondColon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
