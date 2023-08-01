@@ -44,7 +44,7 @@
             lblKing.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             lblKing.ForeColor = Color.FromArgb(0, 192, 192);
             lblKing.ImageAlign = ContentAlignment.TopCenter;
-            lblKing.Location = new Point(331, 43);
+            lblKing.Location = new Point(342, 43);
             lblKing.Name = "lblKing";
             lblKing.Size = new Size(179, 25);
             lblKing.TabIndex = 1;

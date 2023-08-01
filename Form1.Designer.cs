@@ -63,7 +63,7 @@
             // 
             textBox2.BackColor = Color.FromArgb(15, 15, 15);
             textBox2.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.ForeColor = Color.Yellow;
+            textBox2.ForeColor = Color.PaleTurquoise;
             textBox2.Location = new Point(542, 88);
             textBox2.Margin = new Padding(3, 2, 3, 2);
             textBox2.Name = "textBox2";
@@ -117,7 +117,7 @@
             // 
             textBox1.BackColor = Color.FromArgb(15, 15, 15);
             textBox1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.ForeColor = Color.Yellow;
+            textBox1.ForeColor = Color.PaleTurquoise;
             textBox1.Location = new Point(87, 88);
             textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
@@ -128,7 +128,7 @@
             // 
             textBox3.BackColor = Color.FromArgb(15, 15, 15);
             textBox3.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.ForeColor = Color.Gold;
+            textBox3.ForeColor = Color.PaleTurquoise;
             textBox3.Location = new Point(87, 150);
             textBox3.Margin = new Padding(3, 2, 3, 2);
             textBox3.Name = "textBox3";
@@ -139,7 +139,7 @@
             // 
             textBox4.BackColor = Color.FromArgb(15, 15, 15);
             textBox4.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox4.ForeColor = Color.Yellow;
+            textBox4.ForeColor = Color.PaleTurquoise;
             textBox4.Location = new Point(542, 150);
             textBox4.Margin = new Padding(3, 2, 3, 2);
             textBox4.Name = "textBox4";
@@ -150,7 +150,7 @@
             // 
             textBox5.BackColor = Color.FromArgb(15, 15, 15);
             textBox5.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox5.ForeColor = Color.Yellow;
+            textBox5.ForeColor = Color.PaleTurquoise;
             textBox5.Location = new Point(87, 212);
             textBox5.Margin = new Padding(3, 2, 3, 2);
             textBox5.Name = "textBox5";
@@ -161,7 +161,7 @@
             // 
             textBox6.BackColor = Color.FromArgb(15, 15, 15);
             textBox6.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox6.ForeColor = Color.Yellow;
+            textBox6.ForeColor = Color.PaleTurquoise;
             textBox6.Location = new Point(542, 212);
             textBox6.Margin = new Padding(3, 2, 3, 2);
             textBox6.Name = "textBox6";
@@ -172,7 +172,7 @@
             // 
             textBox7.BackColor = Color.FromArgb(15, 15, 15);
             textBox7.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox7.ForeColor = Color.Yellow;
+            textBox7.ForeColor = Color.PaleTurquoise;
             textBox7.Location = new Point(87, 274);
             textBox7.Margin = new Padding(3, 2, 3, 2);
             textBox7.Name = "textBox7";
@@ -183,7 +183,7 @@
             // 
             textBox8.BackColor = Color.FromArgb(15, 15, 15);
             textBox8.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox8.ForeColor = Color.Yellow;
+            textBox8.ForeColor = Color.PaleTurquoise;
             textBox8.Location = new Point(542, 274);
             textBox8.Margin = new Padding(3, 2, 3, 2);
             textBox8.Name = "textBox8";
