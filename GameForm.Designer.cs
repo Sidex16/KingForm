@@ -33,6 +33,7 @@
             confirmButton = new Button();
             button1 = new Button();
             lblInfo = new Label();
+            gbxPlayers = new GroupBox();
             SuspendLayout();
             // 
             // lblKing
@@ -110,12 +111,24 @@
             lblInfo.Text = "Щоб дізнатись хто король почніть гру*";
             lblInfo.TextAlign = ContentAlignment.TopCenter;
             // 
+            // gbxPlayers
+            // 
+            gbxPlayers.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            gbxPlayers.ForeColor = Color.FromArgb(0, 192, 192);
+            gbxPlayers.Location = new Point(186, 92);
+            gbxPlayers.Name = "gbxPlayers";
+            gbxPlayers.Size = new Size(489, 209);
+            gbxPlayers.TabIndex = 16;
+            gbxPlayers.TabStop = false;
+            gbxPlayers.Text = "Гравці:";
+            // 
             // GameForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(25, 25, 25);
             ClientSize = new Size(856, 402);
+            Controls.Add(gbxPlayers);
             Controls.Add(lblInfo);
             Controls.Add(button1);
             Controls.Add(confirmButton);
@@ -138,5 +151,6 @@
         private Button confirmButton;
         private Button button1;
         private Label lblInfo;
+        private GroupBox gbxPlayers;
     }
 }
