@@ -68,6 +68,7 @@ namespace KingForm
         private void btnNewKing_Click(object sender, EventArgs e)
         {
             _numbers.Clear();
+            HideNumbers();
             FindKing();
             ShowKing();
         }
@@ -99,10 +100,22 @@ namespace KingForm
                 _lblPlayers[i].Text = Form1._players[i];
             }
         }
+        private void HideNumbers()
+        {
+            RenameLbl();
+        }
 
         private void pbxUpdate_Click(object sender, EventArgs e)
         {
-
+            for (int i = 0; i < _lblPlayers.Count(); i++)
+            {
+                if (_lblPlayers[i].Text != "...")
+                {
+                    _lblPlayers[i].Text += $"           \t {_numbers[i]}";
+                }
+                else
+                    _lblPlayers[i].Hide();
+            }
         }
     }
 }
