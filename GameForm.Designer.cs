@@ -34,6 +34,14 @@
             btnNewKing = new Button();
             lblInfo = new Label();
             gbxPlayers = new GroupBox();
+            lblNumber8 = new Label();
+            lblNumber7 = new Label();
+            lblNumber6 = new Label();
+            lblNumber5 = new Label();
+            lblNumber4 = new Label();
+            lblNumber3 = new Label();
+            lblNumber2 = new Label();
+            lblNumber1 = new Label();
             lblPlayer8 = new Label();
             lblPlayer7 = new Label();
             lblPlayer6 = new Label();
@@ -124,6 +132,14 @@
             // 
             // gbxPlayers
             // 
+            gbxPlayers.Controls.Add(lblNumber8);
+            gbxPlayers.Controls.Add(lblNumber7);
+            gbxPlayers.Controls.Add(lblNumber6);
+            gbxPlayers.Controls.Add(lblNumber5);
+            gbxPlayers.Controls.Add(lblNumber4);
+            gbxPlayers.Controls.Add(lblNumber3);
+            gbxPlayers.Controls.Add(lblNumber2);
+            gbxPlayers.Controls.Add(lblNumber1);
             gbxPlayers.Controls.Add(lblPlayer8);
             gbxPlayers.Controls.Add(lblPlayer7);
             gbxPlayers.Controls.Add(lblPlayer6);
@@ -140,6 +156,126 @@
             gbxPlayers.TabIndex = 16;
             gbxPlayers.TabStop = false;
             gbxPlayers.Text = "Гравці:";
+            // 
+            // lblNumber8
+            // 
+            lblNumber8.Anchor = AnchorStyles.None;
+            lblNumber8.AutoSize = true;
+            lblNumber8.FlatStyle = FlatStyle.Flat;
+            lblNumber8.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblNumber8.ForeColor = Color.FromArgb(0, 192, 192);
+            lblNumber8.ImageAlign = ContentAlignment.TopCenter;
+            lblNumber8.Location = new Point(450, 176);
+            lblNumber8.Name = "lblNumber8";
+            lblNumber8.Size = new Size(20, 17);
+            lblNumber8.TabIndex = 33;
+            lblNumber8.Text = "...";
+            lblNumber8.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // lblNumber7
+            // 
+            lblNumber7.Anchor = AnchorStyles.None;
+            lblNumber7.AutoSize = true;
+            lblNumber7.FlatStyle = FlatStyle.Flat;
+            lblNumber7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblNumber7.ForeColor = Color.FromArgb(0, 192, 192);
+            lblNumber7.ImageAlign = ContentAlignment.TopCenter;
+            lblNumber7.Location = new Point(450, 155);
+            lblNumber7.Name = "lblNumber7";
+            lblNumber7.Size = new Size(20, 17);
+            lblNumber7.TabIndex = 32;
+            lblNumber7.Text = "...";
+            lblNumber7.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // lblNumber6
+            // 
+            lblNumber6.Anchor = AnchorStyles.None;
+            lblNumber6.AutoSize = true;
+            lblNumber6.FlatStyle = FlatStyle.Flat;
+            lblNumber6.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblNumber6.ForeColor = Color.FromArgb(0, 192, 192);
+            lblNumber6.ImageAlign = ContentAlignment.TopCenter;
+            lblNumber6.Location = new Point(450, 134);
+            lblNumber6.Name = "lblNumber6";
+            lblNumber6.Size = new Size(20, 17);
+            lblNumber6.TabIndex = 31;
+            lblNumber6.Text = "...";
+            lblNumber6.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // lblNumber5
+            // 
+            lblNumber5.Anchor = AnchorStyles.None;
+            lblNumber5.AutoSize = true;
+            lblNumber5.FlatStyle = FlatStyle.Flat;
+            lblNumber5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblNumber5.ForeColor = Color.FromArgb(0, 192, 192);
+            lblNumber5.ImageAlign = ContentAlignment.TopCenter;
+            lblNumber5.Location = new Point(450, 113);
+            lblNumber5.Name = "lblNumber5";
+            lblNumber5.Size = new Size(20, 17);
+            lblNumber5.TabIndex = 30;
+            lblNumber5.Text = "...";
+            lblNumber5.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // lblNumber4
+            // 
+            lblNumber4.Anchor = AnchorStyles.None;
+            lblNumber4.AutoSize = true;
+            lblNumber4.FlatStyle = FlatStyle.Flat;
+            lblNumber4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblNumber4.ForeColor = Color.FromArgb(0, 192, 192);
+            lblNumber4.ImageAlign = ContentAlignment.TopCenter;
+            lblNumber4.Location = new Point(450, 92);
+            lblNumber4.Name = "lblNumber4";
+            lblNumber4.Size = new Size(20, 17);
+            lblNumber4.TabIndex = 29;
+            lblNumber4.Text = "...";
+            lblNumber4.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // lblNumber3
+            // 
+            lblNumber3.Anchor = AnchorStyles.None;
+            lblNumber3.AutoSize = true;
+            lblNumber3.FlatStyle = FlatStyle.Flat;
+            lblNumber3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblNumber3.ForeColor = Color.FromArgb(0, 192, 192);
+            lblNumber3.ImageAlign = ContentAlignment.TopCenter;
+            lblNumber3.Location = new Point(450, 71);
+            lblNumber3.Name = "lblNumber3";
+            lblNumber3.Size = new Size(20, 17);
+            lblNumber3.TabIndex = 28;
+            lblNumber3.Text = "...";
+            lblNumber3.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // lblNumber2
+            // 
+            lblNumber2.Anchor = AnchorStyles.None;
+            lblNumber2.AutoSize = true;
+            lblNumber2.FlatStyle = FlatStyle.Flat;
+            lblNumber2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblNumber2.ForeColor = Color.FromArgb(0, 192, 192);
+            lblNumber2.ImageAlign = ContentAlignment.TopCenter;
+            lblNumber2.Location = new Point(450, 50);
+            lblNumber2.Name = "lblNumber2";
+            lblNumber2.Size = new Size(20, 17);
+            lblNumber2.TabIndex = 27;
+            lblNumber2.Text = "...";
+            lblNumber2.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // lblNumber1
+            // 
+            lblNumber1.Anchor = AnchorStyles.None;
+            lblNumber1.AutoSize = true;
+            lblNumber1.FlatStyle = FlatStyle.Flat;
+            lblNumber1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblNumber1.ForeColor = Color.FromArgb(0, 192, 192);
+            lblNumber1.ImageAlign = ContentAlignment.TopCenter;
+            lblNumber1.Location = new Point(450, 29);
+            lblNumber1.Name = "lblNumber1";
+            lblNumber1.Size = new Size(20, 17);
+            lblNumber1.TabIndex = 26;
+            lblNumber1.Text = "...";
+            lblNumber1.TextAlign = ContentAlignment.TopCenter;
             // 
             // lblPlayer8
             // 
@@ -314,5 +450,13 @@
         private Label lblPlayer3;
         private Label lblPlayer2;
         private Label lblPlayer1;
+        private Label lblNumber8;
+        private Label lblNumber7;
+        private Label lblNumber6;
+        private Label lblNumber5;
+        private Label lblNumber4;
+        private Label lblNumber3;
+        private Label lblNumber2;
+        private Label lblNumber1;
     }
 }

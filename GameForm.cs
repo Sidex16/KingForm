@@ -15,6 +15,8 @@ namespace KingForm
     {
         private static List<int> _numbers = new List<int>();
         private static List<Label> _lblPlayers = new List<Label>();
+        private static List<Label> _lblNumbers = new List<Label>();
+        private static bool _isGameStarted = false;
         public GameForm()
         {
             InitializeComponent();
@@ -26,15 +28,15 @@ namespace KingForm
         }
         private void GameForm_Load(object sender, EventArgs e)
         {
+            LblNumbersFill();
             LblPlayersFill();
-            RenameLbl();
+            RenameLblPlayers();
             FindKing();
             btnNewKing.Hide();
         }
-
-
         private void confirmButton_Click(object sender, EventArgs e)
         {
+            _isGameStarted = true;
             lblInfo.Hide();
             ShowKing();
             btnNewKing.Show();
@@ -82,7 +84,7 @@ namespace KingForm
                 }
             }
         }
-         private void LblPlayersFill()
+        private void LblPlayersFill()
         {
             _lblPlayers.Add(lblPlayer1);
             _lblPlayers.Add(lblPlayer2);
@@ -93,28 +95,54 @@ namespace KingForm
             _lblPlayers.Add(lblPlayer7);
             _lblPlayers.Add(lblPlayer8);
         }
-        private void RenameLbl()
+        private void LblNumbersFill()
+        {
+            _lblNumbers.Add(lblNumber1);
+            _lblNumbers.Add(lblNumber2);
+            _lblNumbers.Add(lblNumber3);
+            _lblNumbers.Add(lblNumber4);
+            _lblNumbers.Add(lblNumber5);
+            _lblNumbers.Add(lblNumber6);
+            _lblNumbers.Add(lblNumber7);
+            _lblNumbers.Add(lblNumber8);
+        }
+        private void RenameLblPlayers()
         {
             for (int i = 0; i < Form1._players.Count(); i++)
             {
                 _lblPlayers[i].Text = Form1._players[i];
             }
+        }private void RenameLblNumbers()
+        {
+            for (int i = 0; i < Form1._players.Count(); i++)
+            {
+                _lblNumbers[i].Text = _numbers[i].ToString();
+            }
         }
         private void HideNumbers()
         {
-            RenameLbl();
+            for (int i = 0; i < _lblNumbers.Count(); i++)
+            {
+                _lblNumbers[i].Text = "";
+            }
         }
 
         private void pbxUpdate_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < _lblPlayers.Count(); i++)
+            if (_isGameStarted)
             {
-                if (_lblPlayers[i].Text != "...")
+                for (int i = 0; i < _lblPlayers.Count(); i++)
                 {
-                    _lblPlayers[i].Text += $"           \t {_numbers[i]}";
+                    if (_lblPlayers[i].Text != "...")
+                    {
+                        RenameLblNumbers();
+                    }
+                    else
+                    {
+                        _lblPlayers[i].Hide();
+                        _lblNumbers[i].Hide();
+                    }
                 }
-                else
-                    _lblPlayers[i].Hide();
             }
         }
     }
