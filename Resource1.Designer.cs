@@ -63,6 +63,16 @@ namespace KingForm {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _211876_play_icon {
+            get {
+                object obj = ResourceManager.GetObject("211876_play_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _303_3037570_eyequeue_white_eye_icon_transparent {
             get {
                 object obj = ResourceManager.GetObject("303-3037570_eyequeue-white-eye-icon-transparent", resourceCulture);
@@ -73,9 +83,39 @@ namespace KingForm {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _339870_capitol_death_hanging_punishment_sentence_icon {
+            get {
+                object obj = ResourceManager.GetObject("339870_capitol_death_hanging_punishment_sentence_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3669295_ic_white_filled_play_circle_icon {
+            get {
+                object obj = ResourceManager.GetObject("3669295_ic_white_filled_play_circle_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _8111405_reset_reload_refresh_sync_arrow_icon {
             get {
                 object obj = ResourceManager.GetObject("_8111405_reset_reload_refresh_sync_arrow_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _8686963_ic_fluent_clipboard_task_list_icon {
+            get {
+                object obj = ResourceManager.GetObject("8686963_ic_fluent_clipboard_task_list_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

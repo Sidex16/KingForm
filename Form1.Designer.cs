@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             guideLabel = new Label();
             textBox2 = new TextBox();
             addToFirstColon = new Label();
@@ -236,6 +237,7 @@
             Controls.Add(addToFirstColon);
             Controls.Add(textBox2);
             Controls.Add(guideLabel);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             Name = "Form1";
             Text = "Begin";

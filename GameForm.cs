@@ -22,26 +22,9 @@ namespace KingForm
         {
             InitializeComponent();
         }
-
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             Environment.Exit(0);
-        }
-        private void GameForm_Load(object sender, EventArgs e)
-        {
-            LblNumbersFill();
-            LblPlayersFill();
-            RenameLblPlayers();
-            FindKing();
-            btnNewKing.Hide();
-        }
-        private void confirmButton_Click(object sender, EventArgs e)
-        {
-            _isGameStarted = true;
-            lblInfo.Hide();
-            ShowKing();
-            btnNewKing.Show();
-            confirmButton.Hide();
         }
         private void FindKing()
         {
@@ -108,14 +91,6 @@ namespace KingForm
                 }
             }
         }
-
-        private void btnNewKing_Click(object sender, EventArgs e)
-        {
-            _isNumbersShown = false;
-            HideNumbers();
-            FindKing();
-            ShowKing();
-        }
         private void ShowKing()
         {
             for (int i = 0; i < Form1._players.Count(); i++)
@@ -174,6 +149,23 @@ namespace KingForm
                 _lblNumbers[i].Text = "";
             }
         }
+        private void GameForm_Load(object sender, EventArgs e)
+        {
+            LblNumbersFill();
+            LblPlayersFill();
+            RenameLblPlayers();
+            FindKing();
+            pbxPlay.Hide();
+        }
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            _isGameStarted = true;
+            lblInfo.Hide();
+            HideNumbers();
+            ShowKing();
+            pbxPlay.Show();
+            btnConfirm.Hide();
+        }
 
         private void pbxShow_Click(object sender, EventArgs e)
         {
@@ -204,6 +196,14 @@ namespace KingForm
                 RenameLblNumbers();
             }
 
+        }
+
+        private void pbxPlay_Click(object sender, EventArgs e)
+        {
+            _isNumbersShown = false;
+            HideNumbers();
+            FindKing();
+            ShowKing();
         }
     }
 }

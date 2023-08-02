@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameForm));
             lblKing = new Label();
             label1 = new Label();
-            confirmButton = new Button();
-            btnNewKing = new Button();
+            btnConfirm = new Button();
             lblInfo = new Label();
             gbxPlayers = new GroupBox();
             lblNumber8 = new Label();
@@ -50,9 +50,11 @@
             lblPlayer3 = new Label();
             lblPlayer2 = new Label();
             lblPlayer1 = new Label();
+            pbxPlay = new PictureBox();
             pbxShow = new PictureBox();
             pbxReroll = new PictureBox();
             gbxPlayers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbxPlay).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxShow).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxReroll).BeginInit();
             SuspendLayout();
@@ -65,7 +67,7 @@
             lblKing.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             lblKing.ForeColor = Color.FromArgb(0, 192, 192);
             lblKing.ImageAlign = ContentAlignment.TopCenter;
-            lblKing.Location = new Point(342, 43);
+            lblKing.Location = new Point(354, 43);
             lblKing.Name = "lblKing";
             lblKing.Size = new Size(179, 25);
             lblKing.TabIndex = 1;
@@ -83,39 +85,22 @@
             label1.TabIndex = 2;
             label1.Text = "X";
             // 
-            // confirmButton
+            // btnConfirm
             // 
-            confirmButton.AutoSize = true;
-            confirmButton.BackColor = Color.DimGray;
-            confirmButton.BackgroundImageLayout = ImageLayout.None;
-            confirmButton.Cursor = Cursors.Hand;
-            confirmButton.FlatStyle = FlatStyle.Popup;
-            confirmButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            confirmButton.ForeColor = Color.FromArgb(0, 0, 0, 0);
-            confirmButton.Location = new Point(580, 353);
-            confirmButton.Name = "confirmButton";
-            confirmButton.Size = new Size(95, 27);
-            confirmButton.TabIndex = 13;
-            confirmButton.Text = "Старт";
-            confirmButton.UseVisualStyleBackColor = false;
-            confirmButton.Click += confirmButton_Click;
-            // 
-            // btnNewKing
-            // 
-            btnNewKing.AutoSize = true;
-            btnNewKing.BackColor = Color.DimGray;
-            btnNewKing.BackgroundImageLayout = ImageLayout.None;
-            btnNewKing.Cursor = Cursors.Hand;
-            btnNewKing.FlatStyle = FlatStyle.Popup;
-            btnNewKing.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnNewKing.ForeColor = Color.FromArgb(0, 0, 0, 0);
-            btnNewKing.Location = new Point(710, 353);
-            btnNewKing.Name = "btnNewKing";
-            btnNewKing.Size = new Size(116, 27);
-            btnNewKing.TabIndex = 14;
-            btnNewKing.Text = "Новий король";
-            btnNewKing.UseVisualStyleBackColor = false;
-            btnNewKing.Click += btnNewKing_Click;
+            btnConfirm.AutoSize = true;
+            btnConfirm.BackColor = Color.DimGray;
+            btnConfirm.BackgroundImageLayout = ImageLayout.None;
+            btnConfirm.Cursor = Cursors.Hand;
+            btnConfirm.FlatStyle = FlatStyle.Popup;
+            btnConfirm.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnConfirm.ForeColor = Color.FromArgb(0, 0, 0, 0);
+            btnConfirm.Location = new Point(580, 353);
+            btnConfirm.Name = "btnConfirm";
+            btnConfirm.Size = new Size(95, 27);
+            btnConfirm.TabIndex = 13;
+            btnConfirm.Text = "Старт";
+            btnConfirm.UseVisualStyleBackColor = false;
+            btnConfirm.Click += btnConfirm_Click;
             // 
             // lblInfo
             // 
@@ -399,6 +384,18 @@
             lblPlayer1.Text = "...";
             lblPlayer1.TextAlign = ContentAlignment.TopCenter;
             // 
+            // pbxPlay
+            // 
+            pbxPlay.Cursor = Cursors.Hand;
+            pbxPlay.Image = Resource1._211876_play_icon;
+            pbxPlay.Location = new Point(580, 76);
+            pbxPlay.Name = "pbxPlay";
+            pbxPlay.Size = new Size(30, 23);
+            pbxPlay.SizeMode = PictureBoxSizeMode.Zoom;
+            pbxPlay.TabIndex = 19;
+            pbxPlay.TabStop = false;
+            pbxPlay.Click += pbxPlay_Click;
+            // 
             // pbxShow
             // 
             pbxShow.Cursor = Cursors.Hand;
@@ -429,21 +426,23 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(25, 25, 25);
             ClientSize = new Size(856, 402);
+            Controls.Add(pbxPlay);
             Controls.Add(pbxReroll);
             Controls.Add(pbxShow);
             Controls.Add(gbxPlayers);
             Controls.Add(lblInfo);
-            Controls.Add(btnNewKing);
-            Controls.Add(confirmButton);
+            Controls.Add(btnConfirm);
             Controls.Add(label1);
             Controls.Add(lblKing);
             ForeColor = Color.Black;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             Name = "GameForm";
             Text = "GameForm";
             Load += GameForm_Load;
             gbxPlayers.ResumeLayout(false);
             gbxPlayers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbxPlay).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbxShow).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbxReroll).EndInit();
             ResumeLayout(false);
@@ -454,8 +453,7 @@
 
         private Label lblKing;
         private Label label1;
-        private Button confirmButton;
-        private Button btnNewKing;
+        private Button btnConfirm;
         private Label lblInfo;
         private GroupBox gbxPlayers;
         private PictureBox pbxShow;
@@ -476,5 +474,6 @@
         private Label lblNumber2;
         private Label lblNumber1;
         private PictureBox pbxReroll;
+        private PictureBox pbxPlay;
     }
 }

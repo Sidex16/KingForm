@@ -118,8 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="_8111405_reset_reload_refresh_sync_arrow_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\8111405_reset_reload_refresh_sync_arrow_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="339870_capitol_death_hanging_punishment_sentence_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\339870_capitol_death_hanging_punishment_sentence_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="9554514_sync_reload_refresh_update_repeat_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\9554514_sync_reload_refresh_update_repeat_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -127,7 +127,19 @@
   <data name="refresh-icon-white-0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\refresh-icon-white-0.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="211876_play_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\211876_play_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="303-3037570_eyequeue-white-eye-icon-transparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\303-3037570_eyequeue-white-eye-icon-transparent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="3669295_ic_white_filled_play_circle_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\3669295_ic_white_filled_play_circle_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_8111405_reset_reload_refresh_sync_arrow_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\8111405_reset_reload_refresh_sync_arrow_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="8686963_ic_fluent_clipboard_task_list_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\8686963_ic_fluent_clipboard_task_list_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
