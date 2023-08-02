@@ -17,6 +17,7 @@ namespace KingForm
         private static List<Label> _lblPlayers = new List<Label>();
         private static List<Label> _lblNumbers = new List<Label>();
         private static bool _isGameStarted = false;
+        private static bool _isNumbersShown = false;
         public GameForm()
         {
             InitializeComponent();
@@ -42,8 +43,9 @@ namespace KingForm
             btnNewKing.Show();
             confirmButton.Hide();
         }
-        static void FindKing()
+        private void FindKing()
         {
+            _numbers.Clear();
             Random rand = new Random();
             bool tut;
             int r;
@@ -66,10 +68,50 @@ namespace KingForm
                 }
             }
         }
+        private void UpdateNumbers()
+        {
+            int temp = 0, tempI = 0;
+            for (int i = 0; i < Form1._players.Count(); i++)
+            {
+                if (_numbers[i] == 0)
+                {
+                    temp = _numbers[i];
+                    tempI = i;
+                }
+            }
+            _numbers.Clear();
+            for (int i = 0; i < Form1._players.Count(); i++)
+            {
+                _numbers.Add(9);
+            }
+            _numbers[tempI] = temp;
+            Random rand = new Random();
+            bool tut;
+            int r;
+            for (int i = 0; i < Form1._players.Count();)
+            {
+                tut = false;
+                r = rand.Next(0, Form1._players.Count());
+                for (int j = 0; j < i; j++)
+                {
+                    if (_numbers[j] == r)
+                    {
+                        tut = true;
+                        break;
+                    }
+                }
+                if (!tut)
+                {
+                    if (_numbers[i] != temp)
+                        _numbers[i] = r;
+                    i++;
+                }
+            }
+        }
 
         private void btnNewKing_Click(object sender, EventArgs e)
         {
-            _numbers.Clear();
+            _isNumbersShown = false;
             HideNumbers();
             FindKing();
             ShowKing();
@@ -112,10 +154,16 @@ namespace KingForm
             {
                 _lblPlayers[i].Text = Form1._players[i];
             }
-        }private void RenameLblNumbers()
+        }
+        private void RenameLblNumbers()
         {
             for (int i = 0; i < Form1._players.Count(); i++)
             {
+                if (_numbers[i] == 0)
+                {
+                    _lblNumbers[i].Text = "";
+                    continue;
+                }
                 _lblNumbers[i].Text = _numbers[i].ToString();
             }
         }
@@ -127,10 +175,11 @@ namespace KingForm
             }
         }
 
-        private void pbxUpdate_Click(object sender, EventArgs e)
+        private void pbxShow_Click(object sender, EventArgs e)
         {
             if (_isGameStarted)
             {
+                _isNumbersShown = true;
                 for (int i = 0; i < _lblPlayers.Count(); i++)
                 {
                     if (_lblPlayers[i].Text != "...")
@@ -144,6 +193,17 @@ namespace KingForm
                     }
                 }
             }
+        }
+
+        private void pbxReroll_Click(object sender, EventArgs e)
+        {
+            if (_isGameStarted && _isNumbersShown)
+            {
+                HideNumbers();
+                UpdateNumbers();
+                RenameLblNumbers();
+            }
+
         }
     }
 }

@@ -50,9 +50,11 @@
             lblPlayer3 = new Label();
             lblPlayer2 = new Label();
             lblPlayer1 = new Label();
-            pbxUpdate = new PictureBox();
+            pbxShow = new PictureBox();
+            pbxReroll = new PictureBox();
             gbxPlayers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbxUpdate).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbxShow).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbxReroll).BeginInit();
             SuspendLayout();
             // 
             // lblKing
@@ -397,16 +399,29 @@
             lblPlayer1.Text = "...";
             lblPlayer1.TextAlign = ContentAlignment.TopCenter;
             // 
-            // pbxUpdate
+            // pbxShow
             // 
-            pbxUpdate.Image = Resource1._303_3037570_eyequeue_white_eye_icon_transparent;
-            pbxUpdate.Location = new Point(677, 89);
-            pbxUpdate.Name = "pbxUpdate";
-            pbxUpdate.Size = new Size(40, 23);
-            pbxUpdate.SizeMode = PictureBoxSizeMode.Zoom;
-            pbxUpdate.TabIndex = 17;
-            pbxUpdate.TabStop = false;
-            pbxUpdate.Click += pbxUpdate_Click;
+            pbxShow.Cursor = Cursors.Hand;
+            pbxShow.Image = Resource1._303_3037570_eyequeue_white_eye_icon_transparent;
+            pbxShow.Location = new Point(635, 76);
+            pbxShow.Name = "pbxShow";
+            pbxShow.Size = new Size(40, 23);
+            pbxShow.SizeMode = PictureBoxSizeMode.Zoom;
+            pbxShow.TabIndex = 17;
+            pbxShow.TabStop = false;
+            pbxShow.Click += pbxShow_Click;
+            // 
+            // pbxReroll
+            // 
+            pbxReroll.Cursor = Cursors.Hand;
+            pbxReroll.Image = Resource1.refresh_icon_white_0;
+            pbxReroll.Location = new Point(605, 76);
+            pbxReroll.Name = "pbxReroll";
+            pbxReroll.Size = new Size(30, 23);
+            pbxReroll.SizeMode = PictureBoxSizeMode.Zoom;
+            pbxReroll.TabIndex = 18;
+            pbxReroll.TabStop = false;
+            pbxReroll.Click += pbxReroll_Click;
             // 
             // GameForm
             // 
@@ -414,7 +429,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(25, 25, 25);
             ClientSize = new Size(856, 402);
-            Controls.Add(pbxUpdate);
+            Controls.Add(pbxReroll);
+            Controls.Add(pbxShow);
             Controls.Add(gbxPlayers);
             Controls.Add(lblInfo);
             Controls.Add(btnNewKing);
@@ -428,7 +444,8 @@
             Load += GameForm_Load;
             gbxPlayers.ResumeLayout(false);
             gbxPlayers.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pbxUpdate).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbxShow).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbxReroll).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -441,7 +458,7 @@
         private Button btnNewKing;
         private Label lblInfo;
         private GroupBox gbxPlayers;
-        private PictureBox pbxUpdate;
+        private PictureBox pbxShow;
         private Label lblPlayer8;
         private Label lblPlayer7;
         private Label lblPlayer6;
@@ -458,5 +475,6 @@
         private Label lblNumber3;
         private Label lblNumber2;
         private Label lblNumber1;
+        private PictureBox pbxReroll;
     }
 }
