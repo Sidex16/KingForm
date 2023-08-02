@@ -82,7 +82,7 @@ namespace KingForm
             _numbers.Clear();
             for (int i = 0; i < Form1._players.Count(); i++)
             {
-                _numbers.Add(9);
+                _numbers.Add(1);
             }
             _numbers[tempI] = temp;
             Random rand = new Random();
@@ -91,7 +91,7 @@ namespace KingForm
             for (int i = 0; i < Form1._players.Count();)
             {
                 tut = false;
-                r = rand.Next(0, Form1._players.Count());
+                r = rand.Next(1, Form1._players.Count());
                 for (int j = 0; j < i; j++)
                 {
                     if (_numbers[j] == r)
