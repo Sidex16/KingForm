@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -83,7 +85,7 @@ namespace KingForm
                     }
                 }
                 if (!tut)
-                {                    
+                {
                     _numbers[i] = r;
                     i++;
                 }
@@ -157,6 +159,26 @@ namespace KingForm
                 _lblNumbers[i].Text = "";
             }
         }
+        private void ShowRandomJudgement()
+        {
+            Random rand = new Random();
+
+            string[] judgements = File.ReadAllLines("Judgement.txt");
+            lblJudgement.Text = judgements[rand.Next(judgements.Count())];
+            lblJudgement.Show();
+
+
+        }
+        private void ShowRandomTask()
+        {
+            Random rand = new Random();
+
+            string[] tasks = File.ReadAllLines("Task.txt");
+            lblTask.Text = tasks[rand.Next(tasks.Count())];
+            lblTask.Show();
+
+
+        }
         private void GameForm_Load(object sender, EventArgs e)
         {
             LblNumbersFill();
@@ -164,6 +186,12 @@ namespace KingForm
             RenameLblPlayers();
             FindKing();
             pbxPlay.Hide();
+            pbxShow.Hide();
+            pbxReroll.Hide();
+            pbxJudgement.Hide();
+            lblJudgement.Hide();
+            pbxTask.Hide();
+            lblTask.Hide();
         }
         private void btnConfirm_Click(object sender, EventArgs e)
         {
@@ -172,6 +200,10 @@ namespace KingForm
             HideNumbers();
             ShowKing();
             pbxPlay.Show();
+            pbxShow.Show();
+            pbxReroll.Show();
+            pbxJudgement.Show();
+            pbxTask.Show();
             btnConfirm.Hide();
         }
 
@@ -212,8 +244,18 @@ namespace KingForm
             HideNumbers();
             FindKing();
             ShowKing();
+            lblJudgement.Hide();
+            lblTask.Hide();
         }
 
+        private void pbxJudgement_Click(object sender, EventArgs e)
+        {
+            ShowRandomJudgement();
+        }
 
+        private void pbxTask_Click(object sender, EventArgs e)
+        {
+            ShowRandomTask();
+        }
     }
 }

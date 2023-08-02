@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameForm));
             lblKing = new Label();
-            label1 = new Label();
             btnConfirm = new Button();
             lblInfo = new Label();
             gbxPlayers = new GroupBox();
@@ -53,14 +52,16 @@
             pbxPlay = new PictureBox();
             pbxShow = new PictureBox();
             pbxReroll = new PictureBox();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
+            pbxJudgement = new PictureBox();
+            pbxTask = new PictureBox();
+            lblJudgement = new Label();
+            lblTask = new Label();
             gbxPlayers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbxPlay).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxShow).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxReroll).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbxJudgement).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbxTask).BeginInit();
             SuspendLayout();
             // 
             // lblKing
@@ -78,17 +79,6 @@
             lblKing.Text = "Натисніть \"Старт\"";
             lblKing.TextAlign = ContentAlignment.TopCenter;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(0, 192, 192);
-            label1.Location = new Point(824, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(20, 21);
-            label1.TabIndex = 2;
-            label1.Text = "X";
-            // 
             // btnConfirm
             // 
             btnConfirm.AutoSize = true;
@@ -98,7 +88,7 @@
             btnConfirm.FlatStyle = FlatStyle.Popup;
             btnConfirm.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnConfirm.ForeColor = Color.FromArgb(0, 0, 0, 0);
-            btnConfirm.Location = new Point(580, 353);
+            btnConfirm.Location = new Point(374, 350);
             btnConfirm.Name = "btnConfirm";
             btnConfirm.Size = new Size(95, 27);
             btnConfirm.TabIndex = 13;
@@ -276,7 +266,7 @@
             lblPlayer8.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             lblPlayer8.ForeColor = Color.FromArgb(0, 192, 192);
             lblPlayer8.ImageAlign = ContentAlignment.TopCenter;
-            lblPlayer8.Location = new Point(6, 176);
+            lblPlayer8.Location = new Point(17, 176);
             lblPlayer8.Name = "lblPlayer8";
             lblPlayer8.Size = new Size(20, 17);
             lblPlayer8.TabIndex = 25;
@@ -291,7 +281,7 @@
             lblPlayer7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             lblPlayer7.ForeColor = Color.FromArgb(0, 192, 192);
             lblPlayer7.ImageAlign = ContentAlignment.TopCenter;
-            lblPlayer7.Location = new Point(6, 155);
+            lblPlayer7.Location = new Point(17, 155);
             lblPlayer7.Name = "lblPlayer7";
             lblPlayer7.Size = new Size(20, 17);
             lblPlayer7.TabIndex = 24;
@@ -306,7 +296,7 @@
             lblPlayer6.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             lblPlayer6.ForeColor = Color.FromArgb(0, 192, 192);
             lblPlayer6.ImageAlign = ContentAlignment.TopCenter;
-            lblPlayer6.Location = new Point(6, 134);
+            lblPlayer6.Location = new Point(17, 134);
             lblPlayer6.Name = "lblPlayer6";
             lblPlayer6.Size = new Size(20, 17);
             lblPlayer6.TabIndex = 23;
@@ -321,7 +311,7 @@
             lblPlayer5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             lblPlayer5.ForeColor = Color.FromArgb(0, 192, 192);
             lblPlayer5.ImageAlign = ContentAlignment.TopCenter;
-            lblPlayer5.Location = new Point(6, 113);
+            lblPlayer5.Location = new Point(17, 113);
             lblPlayer5.Name = "lblPlayer5";
             lblPlayer5.Size = new Size(20, 17);
             lblPlayer5.TabIndex = 22;
@@ -336,7 +326,7 @@
             lblPlayer4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             lblPlayer4.ForeColor = Color.FromArgb(0, 192, 192);
             lblPlayer4.ImageAlign = ContentAlignment.TopCenter;
-            lblPlayer4.Location = new Point(6, 92);
+            lblPlayer4.Location = new Point(17, 92);
             lblPlayer4.Name = "lblPlayer4";
             lblPlayer4.Size = new Size(20, 17);
             lblPlayer4.TabIndex = 21;
@@ -351,7 +341,7 @@
             lblPlayer3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             lblPlayer3.ForeColor = Color.FromArgb(0, 192, 192);
             lblPlayer3.ImageAlign = ContentAlignment.TopCenter;
-            lblPlayer3.Location = new Point(6, 71);
+            lblPlayer3.Location = new Point(17, 71);
             lblPlayer3.Name = "lblPlayer3";
             lblPlayer3.Size = new Size(20, 17);
             lblPlayer3.TabIndex = 20;
@@ -366,7 +356,7 @@
             lblPlayer2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             lblPlayer2.ForeColor = Color.FromArgb(0, 192, 192);
             lblPlayer2.ImageAlign = ContentAlignment.TopCenter;
-            lblPlayer2.Location = new Point(6, 50);
+            lblPlayer2.Location = new Point(17, 50);
             lblPlayer2.Name = "lblPlayer2";
             lblPlayer2.Size = new Size(20, 17);
             lblPlayer2.TabIndex = 19;
@@ -381,7 +371,7 @@
             lblPlayer1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             lblPlayer1.ForeColor = Color.FromArgb(0, 192, 192);
             lblPlayer1.ImageAlign = ContentAlignment.TopCenter;
-            lblPlayer1.Location = new Point(6, 29);
+            lblPlayer1.Location = new Point(17, 29);
             lblPlayer1.Name = "lblPlayer1";
             lblPlayer1.Size = new Size(20, 17);
             lblPlayer1.TabIndex = 18;
@@ -424,27 +414,59 @@
             pbxReroll.TabStop = false;
             pbxReroll.Click += pbxReroll_Click;
             // 
-            // pictureBox1
+            // pbxJudgement
             // 
-            pictureBox1.Cursor = Cursors.Hand;
-            pictureBox1.Image = Resource1._339870_capitol_death_hanging_punishment_sentence_icon;
-            pictureBox1.Location = new Point(800, 103);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(44, 40);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 20;
-            pictureBox1.TabStop = false;
+            pbxJudgement.Cursor = Cursors.Hand;
+            pbxJudgement.Image = Resource1._339870_capitol_death_hanging_punishment_sentence_icon;
+            pbxJudgement.Location = new Point(800, 12);
+            pbxJudgement.Name = "pbxJudgement";
+            pbxJudgement.Size = new Size(44, 40);
+            pbxJudgement.SizeMode = PictureBoxSizeMode.Zoom;
+            pbxJudgement.TabIndex = 20;
+            pbxJudgement.TabStop = false;
+            pbxJudgement.Click += pbxJudgement_Click;
             // 
-            // pictureBox2
+            // pbxTask
             // 
-            pictureBox2.Cursor = Cursors.Hand;
-            pictureBox2.Image = Resource1._8686963_ic_fluent_clipboard_task_list_icon;
-            pictureBox2.Location = new Point(800, 149);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(44, 40);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 21;
-            pictureBox2.TabStop = false;
+            pbxTask.Cursor = Cursors.Hand;
+            pbxTask.Image = Resource1._8686963_ic_fluent_clipboard_task_list_icon;
+            pbxTask.Location = new Point(800, 58);
+            pbxTask.Name = "pbxTask";
+            pbxTask.Size = new Size(44, 40);
+            pbxTask.SizeMode = PictureBoxSizeMode.Zoom;
+            pbxTask.TabIndex = 21;
+            pbxTask.TabStop = false;
+            pbxTask.Click += pbxTask_Click;
+            // 
+            // lblJudgement
+            // 
+            lblJudgement.Anchor = AnchorStyles.None;
+            lblJudgement.AutoSize = true;
+            lblJudgement.FlatStyle = FlatStyle.Flat;
+            lblJudgement.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lblJudgement.ForeColor = Color.FromArgb(0, 192, 192);
+            lblJudgement.ImageAlign = ContentAlignment.TopCenter;
+            lblJudgement.Location = new Point(60, 352);
+            lblJudgement.Name = "lblJudgement";
+            lblJudgement.Size = new Size(212, 25);
+            lblJudgement.TabIndex = 22;
+            lblJudgement.Text = "Натисніть \"Старт\"";
+            lblJudgement.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // lblTask
+            // 
+            lblTask.Anchor = AnchorStyles.None;
+            lblTask.AutoSize = true;
+            lblTask.FlatStyle = FlatStyle.Flat;
+            lblTask.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lblTask.ForeColor = Color.FromArgb(0, 192, 192);
+            lblTask.ImageAlign = ContentAlignment.TopCenter;
+            lblTask.Location = new Point(60, 327);
+            lblTask.Name = "lblTask";
+            lblTask.Size = new Size(212, 25);
+            lblTask.TabIndex = 23;
+            lblTask.Text = "Натисніть \"Старт\"";
+            lblTask.TextAlign = ContentAlignment.TopCenter;
             // 
             // GameForm
             // 
@@ -452,15 +474,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(25, 25, 25);
             ClientSize = new Size(856, 402);
-            Controls.Add(pictureBox2);
-            Controls.Add(pictureBox1);
+            Controls.Add(lblTask);
+            Controls.Add(lblJudgement);
+            Controls.Add(pbxTask);
+            Controls.Add(pbxJudgement);
             Controls.Add(pbxPlay);
             Controls.Add(pbxReroll);
             Controls.Add(pbxShow);
             Controls.Add(gbxPlayers);
             Controls.Add(lblInfo);
             Controls.Add(btnConfirm);
-            Controls.Add(label1);
             Controls.Add(lblKing);
             ForeColor = Color.Black;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -473,8 +496,8 @@
             ((System.ComponentModel.ISupportInitialize)pbxPlay).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbxShow).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbxReroll).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbxJudgement).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbxTask).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -482,7 +505,6 @@
         #endregion
 
         private Label lblKing;
-        private Label label1;
         private Button btnConfirm;
         private Label lblInfo;
         private GroupBox gbxPlayers;
@@ -505,7 +527,9 @@
         private Label lblNumber1;
         private PictureBox pbxReroll;
         private PictureBox pbxPlay;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
+        private PictureBox pbxJudgement;
+        private PictureBox pbxTask;
+        private Label lblJudgement;
+        private Label lblTask;
     }
 }
