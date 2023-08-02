@@ -130,8 +130,14 @@
   <data name="211876_play_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\211876_play_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="7106354_reload_data_infographic_update_element_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\7106354_reload_data_infographic_update_element_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="303-3037570_eyequeue-white-eye-icon-transparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\303-3037570_eyequeue-white-eye-icon-transparent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="8686963_ic_fluent_clipboard_task_list_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\8686963_ic_fluent_clipboard_task_list_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="3669295_ic_white_filled_play_circle_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\3669295_ic_white_filled_play_circle_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,7 +145,7 @@
   <data name="_8111405_reset_reload_refresh_sync_arrow_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\8111405_reset_reload_refresh_sync_arrow_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="8686963_ic_fluent_clipboard_task_list_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\8686963_ic_fluent_clipboard_task_list_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="211661_eye_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\211661_eye_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

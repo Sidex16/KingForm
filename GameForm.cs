@@ -67,14 +67,13 @@ namespace KingForm
             {
                 _numbers.Add(1);
             }
-            _numbers[tempI] = temp;
             Random rand = new Random();
             bool tut;
             int r;
             for (int i = 0; i < Form1._players.Count();)
             {
                 tut = false;
-                r = rand.Next(1, Form1._players.Count());
+                r = rand.Next(0, Form1._players.Count());
                 for (int j = 0; j < i; j++)
                 {
                     if (_numbers[j] == r)
@@ -84,11 +83,20 @@ namespace KingForm
                     }
                 }
                 if (!tut)
-                {
-                    if (_numbers[i] != temp)
-                        _numbers[i] = r;
+                {                    
+                    _numbers[i] = r;
                     i++;
                 }
+            }
+            for (int i = 0; i < Form1._players.Count(); i++)
+            {
+                if (_numbers[i] == 0)
+                {
+                    temp = _numbers[tempI];
+                    _numbers[tempI] = 0;
+                    _numbers[i] = temp;
+                }
+
             }
         }
         private void ShowKing()
@@ -205,5 +213,7 @@ namespace KingForm
             FindKing();
             ShowKing();
         }
+
+
     }
 }

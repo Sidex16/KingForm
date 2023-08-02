@@ -63,6 +63,16 @@ namespace KingForm {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _211661_eye_icon {
+            get {
+                object obj = ResourceManager.GetObject("211661_eye_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _211876_play_icon {
             get {
                 object obj = ResourceManager.GetObject("211876_play_icon", resourceCulture);
@@ -96,6 +106,16 @@ namespace KingForm {
         internal static System.Drawing.Bitmap _3669295_ic_white_filled_play_circle_icon {
             get {
                 object obj = ResourceManager.GetObject("3669295_ic_white_filled_play_circle_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _7106354_reload_data_infographic_update_element_icon {
+            get {
+                object obj = ResourceManager.GetObject("7106354_reload_data_infographic_update_element_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

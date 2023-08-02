@@ -53,10 +53,14 @@
             pbxPlay = new PictureBox();
             pbxShow = new PictureBox();
             pbxReroll = new PictureBox();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
             gbxPlayers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbxPlay).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxShow).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxReroll).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // lblKing
@@ -388,9 +392,9 @@
             // 
             pbxPlay.Cursor = Cursors.Hand;
             pbxPlay.Image = Resource1._211876_play_icon;
-            pbxPlay.Location = new Point(580, 76);
+            pbxPlay.Location = new Point(681, 264);
             pbxPlay.Name = "pbxPlay";
-            pbxPlay.Size = new Size(30, 23);
+            pbxPlay.Size = new Size(51, 37);
             pbxPlay.SizeMode = PictureBoxSizeMode.Zoom;
             pbxPlay.TabIndex = 19;
             pbxPlay.TabStop = false;
@@ -399,10 +403,10 @@
             // pbxShow
             // 
             pbxShow.Cursor = Cursors.Hand;
-            pbxShow.Image = Resource1._303_3037570_eyequeue_white_eye_icon_transparent;
-            pbxShow.Location = new Point(635, 76);
+            pbxShow.Image = Resource1._211661_eye_icon;
+            pbxShow.Location = new Point(681, 218);
             pbxShow.Name = "pbxShow";
-            pbxShow.Size = new Size(40, 23);
+            pbxShow.Size = new Size(51, 40);
             pbxShow.SizeMode = PictureBoxSizeMode.Zoom;
             pbxShow.TabIndex = 17;
             pbxShow.TabStop = false;
@@ -411,14 +415,36 @@
             // pbxReroll
             // 
             pbxReroll.Cursor = Cursors.Hand;
-            pbxReroll.Image = Resource1.refresh_icon_white_0;
-            pbxReroll.Location = new Point(605, 76);
+            pbxReroll.Image = Resource1._7106354_reload_data_infographic_update_element_icon;
+            pbxReroll.Location = new Point(681, 177);
             pbxReroll.Name = "pbxReroll";
-            pbxReroll.Size = new Size(30, 23);
+            pbxReroll.Size = new Size(51, 35);
             pbxReroll.SizeMode = PictureBoxSizeMode.Zoom;
             pbxReroll.TabIndex = 18;
             pbxReroll.TabStop = false;
             pbxReroll.Click += pbxReroll_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Cursor = Cursors.Hand;
+            pictureBox1.Image = Resource1._339870_capitol_death_hanging_punishment_sentence_icon;
+            pictureBox1.Location = new Point(800, 103);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(44, 40);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 20;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Cursor = Cursors.Hand;
+            pictureBox2.Image = Resource1._8686963_ic_fluent_clipboard_task_list_icon;
+            pictureBox2.Location = new Point(800, 149);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(44, 40);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 21;
+            pictureBox2.TabStop = false;
             // 
             // GameForm
             // 
@@ -426,6 +452,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(25, 25, 25);
             ClientSize = new Size(856, 402);
+            Controls.Add(pictureBox2);
+            Controls.Add(pictureBox1);
             Controls.Add(pbxPlay);
             Controls.Add(pbxReroll);
             Controls.Add(pbxShow);
@@ -445,6 +473,8 @@
             ((System.ComponentModel.ISupportInitialize)pbxPlay).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbxShow).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbxReroll).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -475,5 +505,7 @@
         private Label lblNumber1;
         private PictureBox pbxReroll;
         private PictureBox pbxPlay;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }
