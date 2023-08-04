@@ -20,6 +20,8 @@ namespace KingForm
         private static List<Label> _lblNumbers = new List<Label>();
         private static bool _isGameStarted = false;
         private static bool _isNumbersShown = false;
+        private static bool _isJudgementShown = false;
+        private static bool _isTaskShown = false;
         public GameForm()
         {
             InitializeComponent();
@@ -179,12 +181,25 @@ namespace KingForm
 
 
         }
+        private void HideDots()
+        {
+            for (int i = 0; i < _lblPlayers.Count(); i++)
+            {
+                if (_lblPlayers[i].Text == "...")
+                {
+                    _lblPlayers[i].Hide();
+                    _lblNumbers[i].Hide();
+                }
+
+            }
+        }
         private void GameForm_Load(object sender, EventArgs e)
         {
             LblNumbersFill();
             LblPlayersFill();
             RenameLblPlayers();
             FindKing();
+            HideDots();
             pbxPlay.Hide();
             pbxShow.Hide();
             pbxReroll.Hide();
@@ -250,12 +265,20 @@ namespace KingForm
 
         private void pbxJudgement_Click(object sender, EventArgs e)
         {
-            ShowRandomJudgement();
+            if (!_isJudgementShown)
+            {
+                ShowRandomJudgement();
+                _isJudgementShown = true;
+            }
         }
 
         private void pbxTask_Click(object sender, EventArgs e)
         {
-            ShowRandomTask();
+            if (!_isTaskShown)
+            {
+                ShowRandomTask();
+                _isTaskShown = true;
+            }
         }
     }
 }
