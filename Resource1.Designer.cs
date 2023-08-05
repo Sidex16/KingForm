@@ -103,6 +103,26 @@ namespace KingForm {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3643746_add_friend_member_people_plus_icon {
+            get {
+                object obj = ResourceManager.GetObject("3643746_add_friend_member_people_plus_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3643748_block_friend_member_people_icon {
+            get {
+                object obj = ResourceManager.GetObject("3643748_block_friend_member_people_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _3669295_ic_white_filled_play_circle_icon {
             get {
                 object obj = ResourceManager.GetObject("3669295_ic_white_filled_play_circle_icon", resourceCulture);

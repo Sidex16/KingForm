@@ -32,6 +32,7 @@ namespace KingForm
         }
         private void FindKing()
         {
+            Color defaultColor = Color.FromArgb(0, 192, 192);
             _numbers.Clear();
             Random rand = new Random();
             bool tut;
@@ -52,6 +53,17 @@ namespace KingForm
                 {
                     _numbers.Add(r);
                     i++;
+                }
+            }
+            for (int i = 0; i < Form1._players.Count(); i++)
+            {
+                if (_numbers[i] == 0)
+                {
+                    _lblPlayers[i].ForeColor = Color.Yellow;
+                }
+                else
+                {
+                    _lblPlayers[i].ForeColor = defaultColor;
                 }
             }
         }
@@ -139,6 +151,11 @@ namespace KingForm
         {
             for (int i = 0; i < Form1._players.Count(); i++)
             {
+
+                if (!_lblPlayers[i].Visible)
+                {
+                    _lblPlayers[i].Show();
+                }
                 _lblPlayers[i].Text = Form1._players[i];
             }
         }
@@ -148,6 +165,7 @@ namespace KingForm
             {
                 if (_numbers[i] == 0)
                 {
+                    _lblPlayers[i].ForeColor = Color.Yellow;
                     _lblNumbers[i].Text = "";
                     continue;
                 }
@@ -178,17 +196,20 @@ namespace KingForm
             string[] tasks = File.ReadAllLines("Task.txt");
             lblTask.Text = tasks[rand.Next(tasks.Count())];
             lblTask.Show();
-
-
         }
         private void HideDots()
         {
             for (int i = 0; i < _lblPlayers.Count(); i++)
             {
-                if (_lblPlayers[i].Text == "...")
+                if (_lblPlayers[i].Text == "..." || !_lblPlayers[i].Visible)
                 {
                     _lblPlayers[i].Hide();
                     _lblNumbers[i].Hide();
+                }
+                else
+                {
+                    _lblPlayers[i].Show();
+                    _lblNumbers[i].Show();
                 }
 
             }
@@ -207,6 +228,11 @@ namespace KingForm
             lblJudgement.Hide();
             pbxTask.Hide();
             lblTask.Hide();
+            tbxInputPlayer.Hide();
+            lblCancel.Hide();
+            lblConfirm.Hide();
+            pbxAddPlayer.Hide();
+            pbxDeletePlayer.Hide();
         }
         private void btnConfirm_Click(object sender, EventArgs e)
         {
@@ -220,12 +246,16 @@ namespace KingForm
             pbxJudgement.Show();
             pbxTask.Show();
             btnConfirm.Hide();
+            pbxAddPlayer.Show();
+            pbxDeletePlayer.Show();
+
         }
 
         private void pbxShow_Click(object sender, EventArgs e)
         {
             if (_isGameStarted)
             {
+                HideDots();
                 _isNumbersShown = true;
                 for (int i = 0; i < _lblPlayers.Count(); i++)
                 {
@@ -256,6 +286,8 @@ namespace KingForm
         private void pbxPlay_Click(object sender, EventArgs e)
         {
             _isNumbersShown = false;
+            _isJudgementShown = false;
+            _isTaskShown = false;
             HideNumbers();
             FindKing();
             ShowKing();
@@ -280,5 +312,44 @@ namespace KingForm
                 _isTaskShown = true;
             }
         }
+
+        private void pbxDeletePlayer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbxAddPlayer_Click(object sender, EventArgs e)
+        {
+            if (Form1._players.Count < 8)
+            {
+                tbxInputPlayer.Show();
+                lblConfirm.Show();
+                lblCancel.Show();
+            }
+            else
+                MessageBox.Show("Перевищено ліміт гравців");
+        }
+
+        private void lblConfirm_Click(object sender, EventArgs e)
+        {
+            Random rand = new Random();
+            Form1._players.Add(tbxInputPlayer.Text);
+            _numbers.Add(rand.Next(8));
+            RenameLblPlayers();
+            UpdateNumbers();
+            tbxInputPlayer.Hide();
+            lblCancel.Hide();
+            lblConfirm.Hide();
+            tbxInputPlayer.Text = "";
+        }
+
+        private void lblCancel_Click(object sender, EventArgs e)
+        {
+            tbxInputPlayer.Hide();
+            lblCancel.Hide();
+            lblConfirm.Hide();
+        }
+
+        
     }
 }

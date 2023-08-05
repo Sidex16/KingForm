@@ -49,6 +49,7 @@
             lblPlayer3 = new Label();
             lblPlayer2 = new Label();
             lblPlayer1 = new Label();
+            lblConfirm = new Label();
             pbxPlay = new PictureBox();
             pbxShow = new PictureBox();
             pbxReroll = new PictureBox();
@@ -56,12 +57,18 @@
             pbxTask = new PictureBox();
             lblJudgement = new Label();
             lblTask = new Label();
+            pbxAddPlayer = new PictureBox();
+            pbxDeletePlayer = new PictureBox();
+            tbxInputPlayer = new TextBox();
+            lblCancel = new Label();
             gbxPlayers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbxPlay).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxShow).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxReroll).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxJudgement).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxTask).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbxAddPlayer).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbxDeletePlayer).BeginInit();
             SuspendLayout();
             // 
             // lblKing
@@ -189,7 +196,6 @@
             lblNumber5.AutoSize = true;
             lblNumber5.FlatStyle = FlatStyle.Flat;
             lblNumber5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblNumber5.ForeColor = Color.FromArgb(0, 192, 192);
             lblNumber5.ImageAlign = ContentAlignment.TopCenter;
             lblNumber5.Location = new Point(450, 113);
             lblNumber5.Name = "lblNumber5";
@@ -377,6 +383,24 @@
             lblPlayer1.TabIndex = 18;
             lblPlayer1.Text = "...";
             lblPlayer1.TextAlign = ContentAlignment.TopCenter;
+
+            // 
+            // lblConfirm
+            // 
+            lblConfirm.Anchor = AnchorStyles.None;
+            lblConfirm.AutoSize = true;
+            lblConfirm.Cursor = Cursors.Hand;
+            lblConfirm.FlatStyle = FlatStyle.Flat;
+            lblConfirm.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblConfirm.ForeColor = Color.FromArgb(0, 192, 192);
+            lblConfirm.ImageAlign = ContentAlignment.TopCenter;
+            lblConfirm.Location = new Point(132, 233);
+            lblConfirm.Name = "lblConfirm";
+            lblConfirm.Size = new Size(27, 17);
+            lblConfirm.TabIndex = 35;
+            lblConfirm.Text = "✔";
+            lblConfirm.TextAlign = ContentAlignment.TopCenter;
+            lblConfirm.Click += lblConfirm_Click;
             // 
             // pbxPlay
             // 
@@ -468,12 +492,69 @@
             lblTask.Text = "Натисніть \"Старт\"";
             lblTask.TextAlign = ContentAlignment.TopCenter;
             // 
+            // pbxAddPlayer
+            // 
+            pbxAddPlayer.Cursor = Cursors.Hand;
+            pbxAddPlayer.Image = Resource1._3643746_add_friend_member_people_plus_icon;
+            pbxAddPlayer.Location = new Point(12, 103);
+            pbxAddPlayer.Name = "pbxAddPlayer";
+            pbxAddPlayer.Size = new Size(51, 35);
+            pbxAddPlayer.SizeMode = PictureBoxSizeMode.Zoom;
+            pbxAddPlayer.TabIndex = 24;
+            pbxAddPlayer.TabStop = false;
+            pbxAddPlayer.Click += pbxAddPlayer_Click;
+            // 
+            // pbxDeletePlayer
+            // 
+            pbxDeletePlayer.Cursor = Cursors.Hand;
+            pbxDeletePlayer.Image = Resource1._3643748_block_friend_member_people_icon;
+            pbxDeletePlayer.Location = new Point(12, 145);
+            pbxDeletePlayer.Name = "pbxDeletePlayer";
+            pbxDeletePlayer.Size = new Size(51, 35);
+            pbxDeletePlayer.SizeMode = PictureBoxSizeMode.Zoom;
+            pbxDeletePlayer.TabIndex = 25;
+            pbxDeletePlayer.TabStop = false;
+            pbxDeletePlayer.Click += pbxDeletePlayer_Click;
+            // 
+            // tbxInputPlayer
+            // 
+            tbxInputPlayer.BackColor = Color.FromArgb(15, 15, 15);
+            tbxInputPlayer.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            tbxInputPlayer.ForeColor = Color.PaleTurquoise;
+            tbxInputPlayer.Location = new Point(8, 190);
+            tbxInputPlayer.Margin = new Padding(3, 2, 3, 2);
+            tbxInputPlayer.Name = "tbxInputPlayer";
+            tbxInputPlayer.Size = new Size(172, 39);
+            tbxInputPlayer.TabIndex = 34;
+            // 
+            // lblCancel
+            // 
+            lblCancel.Anchor = AnchorStyles.None;
+            lblCancel.AutoSize = true;
+            lblCancel.Cursor = Cursors.Hand;
+            lblCancel.FlatStyle = FlatStyle.Flat;
+            lblCancel.Font = new Font("Segoe UI Black", 12.5F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCancel.ForeColor = Color.FromArgb(192, 0, 0);
+            lblCancel.ImageAlign = ContentAlignment.TopCenter;
+            lblCancel.Location = new Point(157, 229);
+            lblCancel.Name = "lblCancel";
+            lblCancel.Size = new Size(28, 23);
+            lblCancel.TabIndex = 36;
+            lblCancel.Text = "🗙";
+            lblCancel.TextAlign = ContentAlignment.TopCenter;
+            lblCancel.Click += lblCancel_Click;
+            // 
             // GameForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(25, 25, 25);
             ClientSize = new Size(856, 402);
+            Controls.Add(lblCancel);
+            Controls.Add(lblConfirm);
+            Controls.Add(tbxInputPlayer);
+            Controls.Add(pbxDeletePlayer);
+            Controls.Add(pbxAddPlayer);
             Controls.Add(lblTask);
             Controls.Add(lblJudgement);
             Controls.Add(pbxTask);
@@ -498,6 +579,8 @@
             ((System.ComponentModel.ISupportInitialize)pbxReroll).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbxJudgement).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbxTask).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbxAddPlayer).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbxDeletePlayer).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -531,5 +614,10 @@
         private PictureBox pbxTask;
         private Label lblJudgement;
         private Label lblTask;
+        private PictureBox pbxAddPlayer;
+        private PictureBox pbxDeletePlayer;
+        private TextBox tbxInputPlayer;
+        private Label lblConfirm;
+        private Label lblCancel;
     }
 }
