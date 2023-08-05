@@ -22,6 +22,7 @@ namespace KingForm
         private static bool _isNumbersShown = false;
         private static bool _isJudgementShown = false;
         private static bool _isTaskShown = false;
+        private static bool _abilityToDelete = false;
         public GameForm()
         {
             InitializeComponent();
@@ -59,7 +60,7 @@ namespace KingForm
             {
                 if (_numbers[i] == 0)
                 {
-                    _lblPlayers[i].ForeColor = Color.Yellow;
+                    _lblPlayers[i].ForeColor = Color.SlateGray;
                 }
                 else
                 {
@@ -165,7 +166,6 @@ namespace KingForm
             {
                 if (_numbers[i] == 0)
                 {
-                    _lblPlayers[i].ForeColor = Color.Yellow;
                     _lblNumbers[i].Text = "";
                     continue;
                 }
@@ -313,15 +313,13 @@ namespace KingForm
             }
         }
 
-        private void pbxDeletePlayer_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void pbxAddPlayer_Click(object sender, EventArgs e)
         {
             if (Form1._players.Count < 8)
             {
+                lblInfo.Text = "Введіть нового гравця*";
+                lblInfo.Show();
                 tbxInputPlayer.Show();
                 lblConfirm.Show();
                 lblCancel.Show();
@@ -341,6 +339,7 @@ namespace KingForm
             lblCancel.Hide();
             lblConfirm.Hide();
             tbxInputPlayer.Text = "";
+            lblInfo.Hide();
         }
 
         private void lblCancel_Click(object sender, EventArgs e)
@@ -348,8 +347,34 @@ namespace KingForm
             tbxInputPlayer.Hide();
             lblCancel.Hide();
             lblConfirm.Hide();
+            lblInfo.Hide();
         }
 
-        
+        private void pbxDeletePlayer_Click(object sender, EventArgs e)
+        {
+            _abilityToDelete = true;
+            lblInfo.Text = "Нажміть на гравця, якого хочете видалити*";
+            lblInfo.Show();
+        }
+
+        private void lblPlayers_Click(object sender, EventArgs e)
+        {
+            if (_abilityToDelete)
+            {
+                for (int i = 0; i < Form1._players.Count(); i++)
+                {
+                    if (sender == _lblPlayers[i])
+                    {
+                        Form1._players.RemoveAt(i);
+                        _numbers.RemoveAt(i);
+                        _lblPlayers[Form1._players.Count()].Hide();
+                        RenameLblPlayers();
+                        break;
+                    }
+                }
+                _abilityToDelete = false;
+                lblInfo.Hide();
+            }
+        }
     }
 }

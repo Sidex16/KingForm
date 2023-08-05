@@ -278,6 +278,7 @@
             lblPlayer8.TabIndex = 25;
             lblPlayer8.Text = "...";
             lblPlayer8.TextAlign = ContentAlignment.TopCenter;
+            lblPlayer8.Click += lblPlayers_Click;
             // 
             // lblPlayer7
             // 
@@ -293,6 +294,7 @@
             lblPlayer7.TabIndex = 24;
             lblPlayer7.Text = "...";
             lblPlayer7.TextAlign = ContentAlignment.TopCenter;
+            lblPlayer7.Click += lblPlayers_Click;
             // 
             // lblPlayer6
             // 
@@ -308,6 +310,7 @@
             lblPlayer6.TabIndex = 23;
             lblPlayer6.Text = "...";
             lblPlayer6.TextAlign = ContentAlignment.TopCenter;
+            lblPlayer6.Click += lblPlayers_Click;
             // 
             // lblPlayer5
             // 
@@ -323,6 +326,7 @@
             lblPlayer5.TabIndex = 22;
             lblPlayer5.Text = "...";
             lblPlayer5.TextAlign = ContentAlignment.TopCenter;
+            lblPlayer5.Click += lblPlayers_Click;
             // 
             // lblPlayer4
             // 
@@ -338,6 +342,7 @@
             lblPlayer4.TabIndex = 21;
             lblPlayer4.Text = "...";
             lblPlayer4.TextAlign = ContentAlignment.TopCenter;
+            lblPlayer4.Click += lblPlayers_Click;
             // 
             // lblPlayer3
             // 
@@ -353,6 +358,7 @@
             lblPlayer3.TabIndex = 20;
             lblPlayer3.Text = "...";
             lblPlayer3.TextAlign = ContentAlignment.TopCenter;
+            lblPlayer3.Click += lblPlayers_Click;
             // 
             // lblPlayer2
             // 
@@ -368,6 +374,7 @@
             lblPlayer2.TabIndex = 19;
             lblPlayer2.Text = "...";
             lblPlayer2.TextAlign = ContentAlignment.TopCenter;
+            lblPlayer2.Click += lblPlayers_Click;
             // 
             // lblPlayer1
             // 
@@ -383,7 +390,7 @@
             lblPlayer1.TabIndex = 18;
             lblPlayer1.Text = "...";
             lblPlayer1.TextAlign = ContentAlignment.TopCenter;
-
+            lblPlayer1.Click += lblPlayers_Click;
             // 
             // lblConfirm
             // 
