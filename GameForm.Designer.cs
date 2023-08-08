@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameForm));
             lblKing = new Label();
-            btnConfirm = new Button();
             lblInfo = new Label();
             gbxPlayers = new GroupBox();
             lblNumber8 = new Label();
@@ -81,27 +80,10 @@
             lblKing.ImageAlign = ContentAlignment.TopCenter;
             lblKing.Location = new Point(354, 43);
             lblKing.Name = "lblKing";
-            lblKing.Size = new Size(179, 25);
+            lblKing.Size = new Size(174, 25);
             lblKing.TabIndex = 1;
-            lblKing.Text = "Натисніть \"Старт\"";
+            lblKing.Text = "Натисніть \"Enter\"";
             lblKing.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // btnConfirm
-            // 
-            btnConfirm.AutoSize = true;
-            btnConfirm.BackColor = Color.DimGray;
-            btnConfirm.BackgroundImageLayout = ImageLayout.None;
-            btnConfirm.Cursor = Cursors.Hand;
-            btnConfirm.FlatStyle = FlatStyle.Popup;
-            btnConfirm.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnConfirm.ForeColor = Color.FromArgb(0, 0, 0, 0);
-            btnConfirm.Location = new Point(374, 350);
-            btnConfirm.Name = "btnConfirm";
-            btnConfirm.Size = new Size(95, 27);
-            btnConfirm.TabIndex = 13;
-            btnConfirm.Text = "Старт";
-            btnConfirm.UseVisualStyleBackColor = false;
-            btnConfirm.Click += btnConfirm_Click;
             // 
             // lblInfo
             // 
@@ -571,14 +553,15 @@
             Controls.Add(pbxShow);
             Controls.Add(gbxPlayers);
             Controls.Add(lblInfo);
-            Controls.Add(btnConfirm);
             Controls.Add(lblKing);
             ForeColor = Color.Black;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             Name = "GameForm";
             Text = "GameForm";
             Load += GameForm_Load;
+            KeyDown += GameForm_KeyDown;
             gbxPlayers.ResumeLayout(false);
             gbxPlayers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbxPlay).EndInit();
@@ -595,7 +578,6 @@
         #endregion
 
         private Label lblKing;
-        private Button btnConfirm;
         private Label lblInfo;
         private GroupBox gbxPlayers;
         private PictureBox pbxShow;

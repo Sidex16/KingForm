@@ -38,10 +38,10 @@ namespace KingForm
             Random rand = new Random();
             bool tut;
             int r;
-            for (int i = 0; i < Form1._players.Count();)
+            for (int i = 0; i < Form1.Players.Count();)
             {
                 tut = false;
-                r = rand.Next(0, Form1._players.Count());
+                r = rand.Next(0, Form1.Players.Count());
                 for (int j = 0; j < i; j++)
                 {
                     if (_numbers[j] == r)
@@ -56,7 +56,7 @@ namespace KingForm
                     i++;
                 }
             }
-            for (int i = 0; i < Form1._players.Count(); i++)
+            for (int i = 0; i < Form1.Players.Count(); i++)
             {
                 if (_numbers[i] == 0)
                 {
@@ -71,7 +71,7 @@ namespace KingForm
         private void UpdateNumbers()
         {
             int temp = 0, tempI = 0;
-            for (int i = 0; i < Form1._players.Count(); i++)
+            for (int i = 0; i < Form1.Players.Count(); i++)
             {
                 if (_numbers[i] == 0)
                 {
@@ -79,17 +79,17 @@ namespace KingForm
                 }
             }
             _numbers.Clear();
-            for (int i = 0; i < Form1._players.Count(); i++)
+            for (int i = 0; i < Form1.Players.Count(); i++)
             {
                 _numbers.Add(1);
             }
             Random rand = new Random();
             bool tut;
             int r;
-            for (int i = 0; i < Form1._players.Count();)
+            for (int i = 0; i < Form1.Players.Count();)
             {
                 tut = false;
-                r = rand.Next(0, Form1._players.Count());
+                r = rand.Next(0, Form1.Players.Count());
                 for (int j = 0; j < i; j++)
                 {
                     if (_numbers[j] == r)
@@ -104,7 +104,7 @@ namespace KingForm
                     i++;
                 }
             }
-            for (int i = 0; i < Form1._players.Count(); i++)
+            for (int i = 0; i < Form1.Players.Count(); i++)
             {
                 if (_numbers[i] == 0)
                 {
@@ -117,11 +117,11 @@ namespace KingForm
         }
         private void ShowKing()
         {
-            for (int i = 0; i < Form1._players.Count(); i++)
+            for (int i = 0; i < Form1.Players.Count(); i++)
             {
                 if (_numbers[i] == 0)
                 {
-                    lblKing.Text = $"{Form1._players[i]} - Король";
+                    lblKing.Text = $"{Form1.Players[i]} - Король";
                 }
             }
         }
@@ -142,22 +142,21 @@ namespace KingForm
                 _lblNumbers.Add(lbl);
             }
         }
-
         private void RenameLblPlayers()
         {
-            for (int i = 0; i < Form1._players.Count(); i++)
+            for (int i = 0; i < Form1.Players.Count(); i++)
             {
 
                 if (!_lblPlayers[i].Visible)
                 {
                     _lblPlayers[i].Show();
                 }
-                _lblPlayers[i].Text = Form1._players[i];
+                _lblPlayers[i].Text = Form1.Players[i];
             }
         }
         private void RenameLblNumbers()
         {
-            for (int i = 0; i < Form1._players.Count(); i++)
+            for (int i = 0; i < Form1.Players.Count(); i++)
             {
                 if (_numbers[i] == 0)
                 {
@@ -209,6 +208,20 @@ namespace KingForm
 
             }
         }
+        private void PerformAction()
+        {
+            _isGameStarted = true;
+            lblInfo.Hide();
+            HideNumbers();
+            ShowKing();
+            pbxPlay.Show();
+            pbxShow.Show();
+            pbxReroll.Show();
+            pbxJudgement.Show();
+            pbxTask.Show();
+            pbxAddPlayer.Show();
+            pbxDeletePlayer.Show();
+        }
         private void GameForm_Load(object sender, EventArgs e)
         {
             LblNumbersFill();
@@ -229,23 +242,6 @@ namespace KingForm
             pbxAddPlayer.Hide();
             pbxDeletePlayer.Hide();
         }
-        private void btnConfirm_Click(object sender, EventArgs e)
-        {
-            _isGameStarted = true;
-            lblInfo.Hide();
-            HideNumbers();
-            ShowKing();
-            pbxPlay.Show();
-            pbxShow.Show();
-            pbxReroll.Show();
-            pbxJudgement.Show();
-            pbxTask.Show();
-            btnConfirm.Hide();
-            pbxAddPlayer.Show();
-            pbxDeletePlayer.Show();
-
-        }
-
         private void pbxShow_Click(object sender, EventArgs e)
         {
             if (_isGameStarted)
@@ -266,7 +262,6 @@ namespace KingForm
                 }
             }
         }
-
         private void pbxReroll_Click(object sender, EventArgs e)
         {
             if (_isGameStarted && _isNumbersShown)
@@ -277,7 +272,6 @@ namespace KingForm
             }
 
         }
-
         private void pbxPlay_Click(object sender, EventArgs e)
         {
             _isNumbersShown = false;
@@ -289,7 +283,6 @@ namespace KingForm
             lblJudgement.Hide();
             lblTask.Hide();
         }
-
         private void pbxJudgement_Click(object sender, EventArgs e)
         {
             if (!_isJudgementShown)
@@ -298,7 +291,6 @@ namespace KingForm
                 _isJudgementShown = true;
             }
         }
-
         private void pbxTask_Click(object sender, EventArgs e)
         {
             if (!_isTaskShown)
@@ -307,11 +299,9 @@ namespace KingForm
                 _isTaskShown = true;
             }
         }
-
-
         private void pbxAddPlayer_Click(object sender, EventArgs e)
         {
-            if (Form1._players.Count < 8)
+            if (Form1.Players.Count < 8)
             {
                 lblInfo.Text = "Введіть нового гравця*";
                 lblInfo.Show();
@@ -322,13 +312,12 @@ namespace KingForm
             else
                 MessageBox.Show("В грі максимальна кількість гравців!");
         }
-
         private void lblConfirm_Click(object sender, EventArgs e)
         {
             Random rand = new Random();
             if (tbxInputPlayer.Text != "" && tbxInputPlayer.Text != " ")
             {
-                Form1._players.Add(tbxInputPlayer.Text);
+                Form1.Players.Add(tbxInputPlayer.Text);
                 _numbers.Add(rand.Next(8));
                 RenameLblPlayers();
                 UpdateNumbers();
@@ -339,7 +328,6 @@ namespace KingForm
             tbxInputPlayer.Text = "";
             lblInfo.Hide();
         }
-
         private void lblCancel_Click(object sender, EventArgs e)
         {
             tbxInputPlayer.Hide();
@@ -348,26 +336,24 @@ namespace KingForm
             lblConfirm.Hide();
             lblInfo.Hide();
         }
-
         private void pbxDeletePlayer_Click(object sender, EventArgs e)
         {
             _abilityToDelete = true;
             lblInfo.Text = "Нажміть на гравця, якого хочете видалити*";
             lblInfo.Show();
         }
-
         private void lblPlayers_Click(object sender, EventArgs e)
         {
             if (_abilityToDelete)
             {
-                for (int i = 0; i < Form1._players.Count(); i++)
+                for (int i = 0; i < Form1.Players.Count(); i++)
                 {
                     if (sender == _lblPlayers[i])
                     {
-                        Form1._players.RemoveAt(i);
+                        Form1.Players.RemoveAt(i);
                         _numbers.RemoveAt(i);
-                        _lblPlayers[Form1._players.Count()].Hide();
-                        _lblNumbers[Form1._players.Count()].Hide();
+                        _lblPlayers[Form1.Players.Count()].Hide();
+                        _lblNumbers[Form1.Players.Count()].Hide();
                         RenameLblPlayers();
                         break;
                     }
@@ -376,5 +362,14 @@ namespace KingForm
                 lblInfo.Hide();
             }
         }
+
+        private void GameForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                PerformAction();
+            }
+        }
+
     }
 }

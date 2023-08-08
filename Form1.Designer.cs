@@ -31,9 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             guideLabel = new Label();
             textBox2 = new TextBox();
-            addToFirstColon = new Label();
             confirmButton = new Button();
-            label1 = new Label();
             textBox1 = new TextBox();
             textBox3 = new TextBox();
             textBox4 = new TextBox();
@@ -41,11 +39,9 @@
             textBox6 = new TextBox();
             textBox7 = new TextBox();
             textBox8 = new TextBox();
-            label2 = new Label();
-            label3 = new Label();
-            lblInfo = new Label();
             btnOpenTask = new Button();
             btnOpenJudgement = new Button();
+            cbxNumberOfPlayers = new ComboBox();
             SuspendLayout();
             // 
             // guideLabel
@@ -56,11 +52,11 @@
             guideLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             guideLabel.ForeColor = Color.FromArgb(0, 192, 192);
             guideLabel.ImageAlign = ContentAlignment.TopCenter;
-            guideLabel.Location = new Point(304, 32);
+            guideLabel.Location = new Point(281, 36);
             guideLabel.Name = "guideLabel";
-            guideLabel.Size = new Size(213, 25);
+            guideLabel.Size = new Size(221, 25);
             guideLabel.TabIndex = 0;
-            guideLabel.Text = "Введіть імена гравців";
+            guideLabel.Text = "Введіть число гравців:";
             guideLabel.TextAlign = ContentAlignment.TopCenter;
             // 
             // textBox2
@@ -73,19 +69,6 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(189, 39);
             textBox2.TabIndex = 2;
-            // 
-            // addToFirstColon
-            // 
-            addToFirstColon.AutoSize = true;
-            addToFirstColon.BackColor = Color.Transparent;
-            addToFirstColon.Cursor = Cursors.Hand;
-            addToFirstColon.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            addToFirstColon.ForeColor = Color.FromArgb(0, 192, 192);
-            addToFirstColon.Location = new Point(280, 101);
-            addToFirstColon.Name = "addToFirstColon";
-            addToFirstColon.Size = new Size(21, 21);
-            addToFirstColon.TabIndex = 9;
-            addToFirstColon.Text = "+";
             // 
             // confirmButton
             // 
@@ -103,19 +86,6 @@
             confirmButton.Text = "Завершити";
             confirmButton.UseVisualStyleBackColor = false;
             confirmButton.Click += confirmButton_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(0, 0, 0, 0);
-            label1.Cursor = Cursors.Hand;
-            label1.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(0, 192, 192);
-            label1.Location = new Point(281, 76);
-            label1.Name = "label1";
-            label1.Size = new Size(19, 25);
-            label1.TabIndex = 13;
-            label1.Text = "_";
             // 
             // textBox1
             // 
@@ -194,47 +164,6 @@
             textBox8.Size = new Size(189, 39);
             textBox8.TabIndex = 28;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.FromArgb(0, 0, 0, 0);
-            label2.Cursor = Cursors.Hand;
-            label2.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.FromArgb(0, 192, 192);
-            label2.Location = new Point(735, 76);
-            label2.Name = "label2";
-            label2.Size = new Size(19, 25);
-            label2.TabIndex = 35;
-            label2.Text = "_";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Cursor = Cursors.Hand;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.FromArgb(0, 192, 192);
-            label3.Location = new Point(734, 101);
-            label3.Name = "label3";
-            label3.Size = new Size(21, 21);
-            label3.TabIndex = 34;
-            label3.Text = "+";
-            // 
-            // lblInfo
-            // 
-            lblInfo.Anchor = AnchorStyles.None;
-            lblInfo.AutoSize = true;
-            lblInfo.FlatStyle = FlatStyle.Flat;
-            lblInfo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblInfo.ForeColor = Color.FromArgb(0, 192, 192);
-            lblInfo.ImageAlign = ContentAlignment.TopCenter;
-            lblInfo.Location = new Point(-3, -2);
-            lblInfo.Name = "lblInfo";
-            lblInfo.Size = new Size(260, 17);
-            lblInfo.TabIndex = 36;
-            lblInfo.Text = "Щоб дізнатись хто король почніть гру*";
-            lblInfo.TextAlign = ContentAlignment.TopCenter;
-            // 
             // btnOpenTask
             // 
             btnOpenTask.AutoSize = true;
@@ -269,17 +198,28 @@
             btnOpenJudgement.UseVisualStyleBackColor = false;
             btnOpenJudgement.Click += btnOpenJudgement_Click;
             // 
+            // cbxNumberOfPlayers
+            // 
+            cbxNumberOfPlayers.BackColor = Color.FromArgb(25, 25, 25);
+            cbxNumberOfPlayers.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxNumberOfPlayers.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            cbxNumberOfPlayers.ForeColor = Color.FromArgb(0, 192, 192);
+            cbxNumberOfPlayers.FormattingEnabled = true;
+            cbxNumberOfPlayers.Location = new Point(503, 36);
+            cbxNumberOfPlayers.Name = "cbxNumberOfPlayers";
+            cbxNumberOfPlayers.Size = new Size(37, 25);
+            cbxNumberOfPlayers.TabIndex = 39;
+            cbxNumberOfPlayers.SelectedIndexChanged += cbxNumberOfPlayers_SelectedIndexChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(25, 25, 25);
             ClientSize = new Size(856, 402);
+            Controls.Add(cbxNumberOfPlayers);
             Controls.Add(btnOpenJudgement);
             Controls.Add(btnOpenTask);
-            Controls.Add(lblInfo);
-            Controls.Add(label2);
-            Controls.Add(label3);
             Controls.Add(textBox7);
             Controls.Add(textBox8);
             Controls.Add(textBox5);
@@ -287,15 +227,15 @@
             Controls.Add(textBox3);
             Controls.Add(textBox4);
             Controls.Add(textBox1);
-            Controls.Add(label1);
             Controls.Add(confirmButton);
-            Controls.Add(addToFirstColon);
             Controls.Add(textBox2);
             Controls.Add(guideLabel);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             Name = "Form1";
             Text = "Begin";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -304,9 +244,7 @@
 
         private Label guideLabel;
         private TextBox textBox2;
-        private Label addToFirstColon;
         private Button confirmButton;
-        private Label label1;
         private TextBox textBox1;
         private TextBox textBox3;
         private TextBox textBox4;
@@ -314,10 +252,8 @@
         private TextBox textBox6;
         private TextBox textBox7;
         private TextBox textBox8;
-        private Label label2;
-        private Label label3;
-        private Label lblInfo;
         private Button btnOpenTask;
         private Button btnOpenJudgement;
+        private ComboBox cbxNumberOfPlayers;
     }
 }
