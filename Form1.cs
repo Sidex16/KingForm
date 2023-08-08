@@ -14,35 +14,16 @@ namespace KingForm
             InitializeComponent();
         }
 
-        private void addPlayer(TextBox inputText)
+        private void AddPlayers()
         {
-            if (inputText.Text != "" && inputText.Text != " ")
+            for (int i = 1; i <= 8; i++)
             {
-                _players.Add(inputText.Text);
+                TextBox textBox = Controls.Find($"textBox{i}", true).FirstOrDefault() as TextBox;
+                if (textBox.Text != "" && textBox.Text != " ")
+                {
+                    _players.Add(textBox.Text);
+                }
             }
-        }
-
-        private void confirmButton_Click(object sender, EventArgs e)
-        {
-            addPlayer(textBox1);
-            addPlayer(textBox2);
-            addPlayer(textBox3);
-            addPlayer(textBox4);
-            addPlayer(textBox5);
-            addPlayer(textBox6);
-            addPlayer(textBox7);
-            addPlayer(textBox8);
-
-            this.Hide();
-
-            GameForm gameForm = new GameForm();
-            gameForm.ShowDialog();
-
-        }
-        private void btnOpenTask_Click(object sender, EventArgs e)
-        {
-            string filePath = "Task.txt";
-            OpenFileWithDefaultApp(filePath);
         }
         private void OpenFileWithDefaultApp(string filePath)
         {
@@ -57,6 +38,22 @@ namespace KingForm
             {
                 MessageBox.Show($"Error opening the file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void confirmButton_Click(object sender, EventArgs e)
+        {
+            AddPlayers();
+
+            this.Hide();
+
+            GameForm gameForm = new GameForm();
+            gameForm.ShowDialog();
+
+        }
+        private void btnOpenTask_Click(object sender, EventArgs e)
+        {
+            string filePath = "Task.txt";
+            OpenFileWithDefaultApp(filePath);
         }
 
         private void btnOpenJudgement_Click(object sender, EventArgs e)

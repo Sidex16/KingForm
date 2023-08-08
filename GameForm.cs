@@ -75,7 +75,6 @@ namespace KingForm
             {
                 if (_numbers[i] == 0)
                 {
-                    temp = _numbers[i];
                     tempI = i;
                 }
             }
@@ -128,26 +127,22 @@ namespace KingForm
         }
         private void LblPlayersFill()
         {
-            _lblPlayers.Add(lblPlayer1);
-            _lblPlayers.Add(lblPlayer2);
-            _lblPlayers.Add(lblPlayer3);
-            _lblPlayers.Add(lblPlayer4);
-            _lblPlayers.Add(lblPlayer5);
-            _lblPlayers.Add(lblPlayer6);
-            _lblPlayers.Add(lblPlayer7);
-            _lblPlayers.Add(lblPlayer8);
+            for (int i = 1; i <= 8; i++)
+            {
+                Label lbl = Controls.Find($"lblPlayer{i}", true).FirstOrDefault() as Label;
+                _lblPlayers.Add(lbl);
+
+            }
         }
         private void LblNumbersFill()
         {
-            _lblNumbers.Add(lblNumber1);
-            _lblNumbers.Add(lblNumber2);
-            _lblNumbers.Add(lblNumber3);
-            _lblNumbers.Add(lblNumber4);
-            _lblNumbers.Add(lblNumber5);
-            _lblNumbers.Add(lblNumber6);
-            _lblNumbers.Add(lblNumber7);
-            _lblNumbers.Add(lblNumber8);
+            for (int i = 1; i <= 8; i++)
+            {
+                Label lbl = Controls.Find($"lblNumber{i}", true).FirstOrDefault() as Label;
+                _lblNumbers.Add(lbl);
+            }
         }
+
         private void RenameLblPlayers()
         {
             for (int i = 0; i < Form1._players.Count(); i++)
@@ -325,16 +320,19 @@ namespace KingForm
                 lblCancel.Show();
             }
             else
-                MessageBox.Show("Перевищено ліміт гравців");
+                MessageBox.Show("В грі максимальна кількість гравців!");
         }
 
         private void lblConfirm_Click(object sender, EventArgs e)
         {
             Random rand = new Random();
-            Form1._players.Add(tbxInputPlayer.Text);
-            _numbers.Add(rand.Next(8));
-            RenameLblPlayers();
-            UpdateNumbers();
+            if (tbxInputPlayer.Text != "" && tbxInputPlayer.Text != " ")
+            {
+                Form1._players.Add(tbxInputPlayer.Text);
+                _numbers.Add(rand.Next(8));
+                RenameLblPlayers();
+                UpdateNumbers();
+            }
             tbxInputPlayer.Hide();
             lblCancel.Hide();
             lblConfirm.Hide();
@@ -369,6 +367,7 @@ namespace KingForm
                         Form1._players.RemoveAt(i);
                         _numbers.RemoveAt(i);
                         _lblPlayers[Form1._players.Count()].Hide();
+                        _lblNumbers[Form1._players.Count()].Hide();
                         RenameLblPlayers();
                         break;
                     }
