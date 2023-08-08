@@ -543,7 +543,7 @@
             lblCancel.Font = new Font("Segoe UI Black", 12.5F, FontStyle.Bold, GraphicsUnit.Point);
             lblCancel.ForeColor = Color.FromArgb(192, 0, 0);
             lblCancel.ImageAlign = ContentAlignment.TopCenter;
-            lblCancel.Location = new Point(157, 229);
+            lblCancel.Location = new Point(155, 229);
             lblCancel.Name = "lblCancel";
             lblCancel.Size = new Size(28, 23);
             lblCancel.TabIndex = 36;

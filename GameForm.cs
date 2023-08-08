@@ -345,6 +345,7 @@ namespace KingForm
         private void lblCancel_Click(object sender, EventArgs e)
         {
             tbxInputPlayer.Hide();
+            tbxInputPlayer.Text = "";
             lblCancel.Hide();
             lblConfirm.Hide();
             lblInfo.Hide();

@@ -43,6 +43,9 @@
             textBox8 = new TextBox();
             label2 = new Label();
             label3 = new Label();
+            lblInfo = new Label();
+            btnOpenTask = new Button();
+            btnOpenJudgement = new Button();
             SuspendLayout();
             // 
             // guideLabel
@@ -217,12 +220,64 @@
             label3.TabIndex = 34;
             label3.Text = "+";
             // 
+            // lblInfo
+            // 
+            lblInfo.Anchor = AnchorStyles.None;
+            lblInfo.AutoSize = true;
+            lblInfo.FlatStyle = FlatStyle.Flat;
+            lblInfo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblInfo.ForeColor = Color.FromArgb(0, 192, 192);
+            lblInfo.ImageAlign = ContentAlignment.TopCenter;
+            lblInfo.Location = new Point(-3, -2);
+            lblInfo.Name = "lblInfo";
+            lblInfo.Size = new Size(260, 17);
+            lblInfo.TabIndex = 36;
+            lblInfo.Text = "Щоб дізнатись хто король почніть гру*";
+            lblInfo.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // btnOpenTask
+            // 
+            btnOpenTask.AutoSize = true;
+            btnOpenTask.BackColor = Color.DimGray;
+            btnOpenTask.BackgroundImageLayout = ImageLayout.None;
+            btnOpenTask.Cursor = Cursors.Hand;
+            btnOpenTask.FlatStyle = FlatStyle.Popup;
+            btnOpenTask.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnOpenTask.ForeColor = Color.FromArgb(0, 0, 0, 0);
+            btnOpenTask.Location = new Point(636, 350);
+            btnOpenTask.Name = "btnOpenTask";
+            btnOpenTask.Size = new Size(95, 27);
+            btnOpenTask.TabIndex = 37;
+            btnOpenTask.Text = "Завдання";
+            btnOpenTask.UseVisualStyleBackColor = false;
+            btnOpenTask.Click += btnOpenTask_Click;
+            // 
+            // btnOpenJudgement
+            // 
+            btnOpenJudgement.AutoSize = true;
+            btnOpenJudgement.BackColor = Color.DimGray;
+            btnOpenJudgement.BackgroundImageLayout = ImageLayout.None;
+            btnOpenJudgement.Cursor = Cursors.Hand;
+            btnOpenJudgement.FlatStyle = FlatStyle.Popup;
+            btnOpenJudgement.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnOpenJudgement.ForeColor = Color.FromArgb(0, 0, 0, 0);
+            btnOpenJudgement.Location = new Point(749, 350);
+            btnOpenJudgement.Name = "btnOpenJudgement";
+            btnOpenJudgement.Size = new Size(95, 27);
+            btnOpenJudgement.TabIndex = 38;
+            btnOpenJudgement.Text = "Покарання";
+            btnOpenJudgement.UseVisualStyleBackColor = false;
+            btnOpenJudgement.Click += btnOpenJudgement_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(25, 25, 25);
             ClientSize = new Size(856, 402);
+            Controls.Add(btnOpenJudgement);
+            Controls.Add(btnOpenTask);
+            Controls.Add(lblInfo);
             Controls.Add(label2);
             Controls.Add(label3);
             Controls.Add(textBox7);
@@ -261,5 +316,8 @@
         private TextBox textBox8;
         private Label label2;
         private Label label3;
+        private Label lblInfo;
+        private Button btnOpenTask;
+        private Button btnOpenJudgement;
     }
 }
