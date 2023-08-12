@@ -31,17 +31,14 @@ namespace KingForm
         {
             Environment.Exit(0);
         }
-        private void FindKing()
+        private void UniqueNumbers()
         {
-            Color defaultColor = Color.FromArgb(0, 192, 192);
-            _numbers.Clear();
             Random rand = new Random();
-            bool tut;
-            int r;
-            for (int i = 0; i < Form1.Players.Count();)
+            for (int i = 0; i < Form1.Players.Count;)
             {
-                tut = false;
-                r = rand.Next(0, Form1.Players.Count());
+                bool tut = false;
+                int r = rand.Next(0, Form1.Players.Count);
+
                 for (int j = 0; j < i; j++)
                 {
                     if (_numbers[j] == r)
@@ -50,12 +47,27 @@ namespace KingForm
                         break;
                     }
                 }
+
                 if (!tut)
                 {
-                    _numbers.Add(r);
+                    if (i < _numbers.Count)
+                    {
+                        _numbers[i] = r;
+                    }
+                    else
+                    {
+                        _numbers.Add(r);
+                    }
+
                     i++;
                 }
             }
+        }
+        private void FindKing()
+        {
+            Color defaultColor = Color.FromArgb(0, 192, 192);
+            _numbers.Clear();
+            UniqueNumbers();
             for (int i = 0; i < Form1.Players.Count(); i++)
             {
                 if (_numbers[i] == 0)
@@ -78,32 +90,7 @@ namespace KingForm
                     tempI = i;
                 }
             }
-            _numbers.Clear();
-            for (int i = 0; i < Form1.Players.Count(); i++)
-            {
-                _numbers.Add(1);
-            }
-            Random rand = new Random();
-            bool tut;
-            int r;
-            for (int i = 0; i < Form1.Players.Count();)
-            {
-                tut = false;
-                r = rand.Next(0, Form1.Players.Count());
-                for (int j = 0; j < i; j++)
-                {
-                    if (_numbers[j] == r)
-                    {
-                        tut = true;
-                        break;
-                    }
-                }
-                if (!tut)
-                {
-                    _numbers[i] = r;
-                    i++;
-                }
-            }
+            UniqueNumbers();
             for (int i = 0; i < Form1.Players.Count(); i++)
             {
                 if (_numbers[i] == 0)
@@ -142,16 +129,16 @@ namespace KingForm
                 _lblNumbers.Add(lbl);
             }
         }
-        private void RenameLblPlayers()
+        private void RenameLbls(List<Label> list)
         {
             for (int i = 0; i < Form1.Players.Count(); i++)
             {
 
-                if (!_lblPlayers[i].Visible)
+                if (!list[i].Visible)
                 {
-                    _lblPlayers[i].Show();
+                    list[i].Show();
                 }
-                _lblPlayers[i].Text = Form1.Players[i];
+                list[i].Text = Form1.Players[i];
             }
         }
         private void RenameLblNumbers()
@@ -211,9 +198,11 @@ namespace KingForm
         private void PerformAction()
         {
             _isGameStarted = true;
-            lblInfo.Hide();
+
             HideNumbers();
             ShowKing();
+
+            lblInfo.Hide();
             pbxPlay.Show();
             pbxShow.Show();
             pbxReroll.Show();
@@ -226,9 +215,10 @@ namespace KingForm
         {
             LblNumbersFill();
             LblPlayersFill();
-            RenameLblPlayers();
+            RenameLbls(_lblPlayers);
             FindKing();
             HideDots();
+
             pbxPlay.Hide();
             pbxShow.Hide();
             pbxReroll.Hide();
@@ -277,9 +267,11 @@ namespace KingForm
             _isNumbersShown = false;
             _isJudgementShown = false;
             _isTaskShown = false;
+
             HideNumbers();
             FindKing();
             ShowKing();
+
             lblJudgement.Hide();
             lblTask.Hide();
         }
@@ -319,22 +311,22 @@ namespace KingForm
             {
                 Form1.Players.Add(tbxInputPlayer.Text);
                 _numbers.Add(rand.Next(8));
-                RenameLblPlayers();
+                RenameLbls(_lblPlayers);
                 UpdateNumbers();
             }
             tbxInputPlayer.Hide();
             lblCancel.Hide();
             lblConfirm.Hide();
-            tbxInputPlayer.Text = "";
             lblInfo.Hide();
+            tbxInputPlayer.Text = "";
         }
         private void lblCancel_Click(object sender, EventArgs e)
         {
             tbxInputPlayer.Hide();
-            tbxInputPlayer.Text = "";
             lblCancel.Hide();
             lblConfirm.Hide();
             lblInfo.Hide();
+            tbxInputPlayer.Text = "";
         }
         private void pbxDeletePlayer_Click(object sender, EventArgs e)
         {
@@ -354,7 +346,7 @@ namespace KingForm
                         _numbers.RemoveAt(i);
                         _lblPlayers[Form1.Players.Count()].Hide();
                         _lblNumbers[Form1.Players.Count()].Hide();
-                        RenameLblPlayers();
+                        RenameLbls(_lblPlayers);
                         break;
                     }
                 }
